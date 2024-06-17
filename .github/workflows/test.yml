@@ -9,9 +9,9 @@ permissions:
 
 jobs:
   respond:
+    if: ${{ github.event.label.name == 'feature' }}
     runs-on: ubuntu-latest
     steps:
-    
     - name: Print Username
       run: |
         echo "Hello ${{ github.event.issue.user.login }}"
